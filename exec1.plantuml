@@ -1,0 +1,66 @@
+@startuml diagrama1
+
+
+class "Test 1" {
+    + String nome
+    - __nome
+    # _nome : str
+
+    __call__() -> str
+
+
+}
+
+class Test2
+
+"Test 1" ..> Test2
+
+@enduml
+
+@startuml diagrama2
+
+
+class Ettore
+
+@enduml
+
+
+@startuml caso_de_uso
+:User: --> (Object): Fornece valor dos sócios
+"Create the instances" as (Object)
+
+
+
+note right of (Object)
+
+Socio(nome:str, porcentagem_empresa:float)
+
+endnote
+
+(Object) --> (CalcPorcent): Fornece uma lista de objetos
+
+(CalcPorcent) -left-> :User:: Devolve os valores com base nas porcentagens
+"Calculate the porcent with the total value" as (CalcPorcent)
+
+note left of (CalcPorcent)
+
+calc_porcent(list(<Socios>))
+
+endnote
+
+@enduml
+
+
+@startuml diagrama_de_classe
+
+class Socios {
+    + nome: str
+    + porcentagem_da_empresa: float
+
+}
+
+class calc_valor_por_porcentagem {
+    + calc_valor_por_porcentagem(lista_socios: List<Socios>)
+}
+
+@enduml
