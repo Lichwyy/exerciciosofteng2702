@@ -44,7 +44,7 @@ endnote
 
 note left of (CalcPorcent)
 
-calc_porcent(list(<Socios>))
+calc_porcent(valor_total_empresa: float, list(<Socios>))
 
 endnote
 
@@ -60,7 +60,7 @@ class Socios {
 }
 
 class calc_valor_por_porcentagem {
-    + calc_valor_por_porcentagem(lista_socios: List<Socios>)
+    + calc_valor_por_porcentagem(valor_total_empresa: float, lista_socios: List<Socios>)
 }
 
 @enduml
