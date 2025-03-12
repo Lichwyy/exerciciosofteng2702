@@ -3,13 +3,13 @@
 class Socio:
     def __init__(self, nome: str, porcentagem_da_empresa: float):
         self.nome = nome
-        self.porcentagem_da_empresa = porcentagem_da_empresa
+        self.porcentagem_da_empresa = porcentagem_da_empresa/100
 
     
 
 def calcular_valor_por_porcentagem(valor_total_da_empresa: float, lista_socios: list[Socio]):
     for socio in lista_socios:
-        print(f"{socio.nome} possui: R${valor_total_da_empresa*(socio.porcentagem_da_empresa)/100}")
+        print(f"{socio.nome} possui: R${valor_total_da_empresa*socio.porcentagem_da_empresa}")
 
 
 lista_de_socios = [Socio("Sócio 1", 33.33),
