@@ -53,14 +53,14 @@ endnote
 
 @startuml diagrama_de_classe
 
-class Socios {
+class Socio {
     + nome: str
     + porcentagem_da_empresa: float
 
 }
 
 class calc_valor_por_porcentagem {
-    + calc_valor_por_porcentagem(valor_total_empresa: float, lista_socios: List<Socios>)
+    + calc_valor_por_porcentagem(valor_total_empresa: float, lista_socios: List<Socio>)
 }
 
 @enduml

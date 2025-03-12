@@ -1,0 +1,41 @@
+@startuml caso_de_uso
+:User: --> (Object): Fornece valor dos alunos
+"Create the instances" as (Object)
+
+
+
+note right of (Object)
+
+Aluno(nome:str, nota: float)
+
+endnote
+
+(Object) --> (alunos_e_relacao_com_a_media): Fornece uma lista de objetos
+
+(alunos_e_relacao_com_a_media) -left-> :User:: Devolve os nomes dos alunos e se eles estão acima, na, ou abaixo da média
+"Calculate the average grade and return if they are above, on, or below average" as (alunos_e_relacao_com_a_media)
+
+note left of (alunos_e_relacao_com_a_media)
+
+alunos_e_relacao_com_a_media(lista_alunos: List<Aluno>)
+
+endnote
+
+@enduml
+
+
+@startuml diagrama_de_classe
+
+class Aluno {
+    + nome: str
+    + nota: float
+
+    relacao_com_a_media() -> str
+
+}
+
+class alunos_abaixo_da_media {
+    + alunos_abaixo_da_media(list_alunos: List<Aluno>)
+}
+
+@enduml 
