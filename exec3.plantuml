@@ -1,0 +1,42 @@
+@startuml caso_de_uso
+:User: --> (Object): Fornece valor das pessoas
+"Create the instances" as (Object)
+
+
+
+note right of (Object)
+
+Pessoa(nome:str, altura: float, peso: float)
+
+endnote
+
+(Object) --> (definir_peso_anormal): Fornece uma lista de objetos
+
+(definir_peso_anormal) -left-> :User:: Devolve os nomes das pessoas e se eles estão com peso anormal ou com o peso normal
+"It returns the names of the people and whether they are abnormally overweight or normal weight." as (definir_peso_anormal)
+
+note left of (definir_peso_anormal)
+
+definir_peso_anormal(lista_pessoas: List<Pessoa>)
+
+endnote
+
+@enduml
+
+
+@startuml diagrama_de_classe
+
+class Pessoa {
+    + nome: str
+    + altura: float
+    + peso: float
+
+    calcular_imc() -> float
+
+}
+
+class definir_peso_anormal {
+    + definir_peso_anormal(list_pessoas: List<Pessoa>)
+}
+
+@enduml 
